@@ -118,3 +118,91 @@
 .md-typeset blockquote {
   border-left: 0.4rem solid #00cbe6;
 }
+
+[data-md-color-primary="blue-grey"] .md-tabs {
+  background-color: #373737;
+  box-shadow: 0px 7px 15px #888888;
+}
+
+.md-tabs__item {
+  float: left;
+}
+
+.md-tabs__item:nth-child(12) {
+  box-shadow: -2px 0px 2px #888888;
+  background-color: #000;
+  float: right;
+}
+
+.md-tabs__item:nth-child(13) {
+  background-color: #000;
+  float: right;
+}
+
+.md-tabs__item:nth-child(11) {
+  color: rgb(175,175,175);
+}
+
+.md-tabs__item:nth-child(9) {
+  color: rgba(255,255,255,0);
+  width: auto;
+  height: auto;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center 85%;
+  background-origin: content-box;
+  background-image: url(../images/a1_menu.png);
+}
+
+.md-tabs__item:nth-child(10) {
+  color: rgba(255,255,255,0);
+  width: auto;
+  height: auto;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center 85%;
+  background-origin: content-box;
+  background-image: url(../images/adac_menu.png);
+}
+
+.md-tabs--active ~ .md-main .md-nav[data-md-level="1"] .md-nav__title[for="nav-9"] {
+  background: linear-gradient(135deg, #FA8B6A 0%,#EE6293 100%);
+  padding: 5px;
+  border-radius: 3px;
+}
+
+.md-tabs--active ~ .md-main .md-nav[data-md-level="1"] .md-nav__title[for="nav-10"] {
+  background: linear-gradient(#9af6d1 0%,#1fa1ff 100%);
+  padding: 5px;
+  border-radius: 3px;
+}
+
+.md-tabs--active ~ .md-main .md-nav[data-md-level="1"] .md-nav__title[for="nav-2"] {
+  background: linear-gradient(135deg, #00F1E1 0%,#00B4E4 100%);
+  padding: 5px;
+  border-radius: 3px;
+}
+
+.md-tabs--active ~ .md-main .md-nav[data-md-level="1"] .md-nav__title[for="nav-4"] {
+  background: linear-gradient(135deg, #00F1E1 0%,#00B4E4 100%);
+  padding: 5px;
+  border-radius: 3px;
+}
+
+.md-tabs--active ~ .md-main .md-nav--primary .md-nav__title {
+  background: linear-gradient(135deg, #00F1E1 0%,#00B4E4 100%);
+  padding: 5px;
+  text-align: center;
+  border-radius: 3px;
+}
+
+[data-md-color-primary="blue-grey"] .md-nav__link--active {
+  color: #1fa1ff;
+}
+
+.md-nav__link:nth-child(even) {
+  background: linear-gradient(135deg, rgb(240,240,240) 0%,rgb(255,255,255) 100%);
+  border-radius: 3px;
+  padding: 1%;
+  padding-left: 3%;
+}
