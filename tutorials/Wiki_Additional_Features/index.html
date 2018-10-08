@@ -3748,27 +3748,23 @@ $$</p>
 <h2 id="tasklists">Tasklists<a class="headerlink" href="#tasklists" title="Permanent link">Link</a></h2>
 <p>Tasklists are useful for keeping track of tasks and showing what has been done and has yet to be done. Checkbox lists are like regular lists, but prefixed with <code class="codehilite">[ ]</code> for empty or <code class="codehilite">[x]</code> for filled checkboxes.</p>
 <p>Example:</p>
-<div class="codehilite"><pre><span></span>* [x] Lorem ipsum dolor sit amet, consectetur adipiscing elit
-* [x] Nulla lobortis egestas semper
-* [x] Curabitur elit nibh, euismod et ullamcorper at, iaculis feugiat est
-* [ ] Vestibulum convallis sit amet nisi a tincidunt
-    * [x] In hac habitasse platea dictumst
-    * [x] In scelerisque nibh non dolor mollis congue sed et metus
-    * [x] Sed egestas felis quis elit dapibus, ac aliquet turpis mattis
-    * [ ] Praesent sed risus massa
-* [ ] Aenean pretium efficitur erat, donec pharetra, ligula non scelerisque
-* [ ] Nulla vel eros venenatis, imperdiet enim id, faucibus nisi
+<div class="codehilite"><pre><span></span>- [x] Lorem ipsum dolor sit amet, consectetur adipiscing elit
+- [x] Nulla lobortis egestas semper
+- [ ] Vestibulum convallis sit amet nisi a tincidunt
+    - [x] In hac habitasse platea dictumst
+    - [x] In scelerisque nibh non dolor mollis congue sed et metus
+    - [ ] Praesent sed risus massa
+- [ ] Aenean pretium efficitur erat, donec pharetra, ligula non scelerisque
+- [ ] Nulla vel eros venenatis, imperdiet enim id, faucibus nisi
 </pre></div>
 
 <p>Result:</p>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Nulla lobortis egestas semper</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Curabitur elit nibh, euismod et ullamcorper at, iaculis feugiat est</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Vestibulum convallis sit amet nisi a tincidunt<ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> In hac habitasse platea dictumst</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> In scelerisque nibh non dolor mollis congue sed et metus</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Sed egestas felis quis elit dapibus, ac aliquet turpis mattis</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Praesent sed risus massa</li>
 </ul>
 </li>
@@ -3777,80 +3773,90 @@ $$</p>
 </ul>
 <h2 id="code-highlighting">Code Highlighting<a class="headerlink" href="#code-highlighting" title="Permanent link">Link</a></h2>
 <p>Using Markdown syntaxes, code blocks can be opened and closed by writing three backticks on separate lines. To add code highlighting to those blocks, the easiest way is to specify the language directly after the opening block.</p>
-<p>Example:</p>
+<p>Examples:</p>
 <div class="codehilite"><pre><span></span><span class="sb">``</span><span class="err">`</span> <span class="n">python</span>
 <span class="kn">import</span> <span class="nn">tensorflow</span> <span class="kn">as</span> <span class="nn">tf</span>
 <span class="sb">``</span><span class="err">`</span>
 </pre></div>
 
-<p>Result:</p>
+<div class="codehilite"><pre><span></span><span class="sb">``</span><span class="err">`</span> <span class="n">javascript</span>
+<span class="kn">import</span> <span class="nn">Messenger</span><span class="o">,</span> <span class="p">{</span> <span class="n">providers</span> <span class="p">}</span> <span class="kn">from</span> <span class="s1">&#39;@aragon/messenger&#39;</span>
+<span class="kn">import</span> <span class="p">{</span> <span class="n">defer</span> <span class="p">}</span> <span class="kn">from</span> <span class="s1">&#39;rxjs/observable/defer&#39;</span>
+<span class="kn">import</span> <span class="p">{</span> <span class="n">empty</span> <span class="p">}</span> <span class="kn">from</span> <span class="s1">&#39;rxjs/observable/empty&#39;</span>
+<span class="kn">import</span> <span class="p">{</span> <span class="n">fromPromise</span> <span class="p">}</span> <span class="kn">from</span> <span class="s1">&#39;rxjs/observable/fromPromise&#39;</span>
+<span class="kn">import</span> <span class="p">{</span> <span class="n">merge</span> <span class="p">}</span> <span class="kn">from</span> <span class="s1">&#39;rxjs/observable/merge&#39;</span>
+
+<span class="n">export</span> <span class="n">const</span> <span class="n">AppProxyHandler</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="n">get</span> <span class="p">(</span><span class="n">target</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">receiver</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">name</span> <span class="ow">in</span> <span class="n">target</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="n">target</span><span class="p">[</span><span class="n">name</span><span class="p">]</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="n">function</span> <span class="p">(</span><span class="o">...</span><span class="n">params</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="n">target</span><span class="o">.</span><span class="n">rpc</span><span class="o">.</span><span class="n">sendAndObserveResponse</span><span class="p">(</span>
+        <span class="s1">&#39;intent&#39;</span><span class="p">,</span>
+        <span class="p">[</span><span class="n">name</span><span class="p">,</span> <span class="o">...</span><span class="n">params</span><span class="p">]</span>
+      <span class="p">)</span><span class="o">.</span><span class="n">pluck</span><span class="p">(</span><span class="s1">&#39;result&#39;</span><span class="p">)</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+<span class="sb">``</span><span class="err">`</span>
+</pre></div>
+
+<p>Results:</p>
 <div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">tensorflow</span> <span class="kn">as</span> <span class="nn">tf</span>
+</pre></div>
+
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="nx">Messenger</span><span class="p">,</span> <span class="p">{</span> <span class="nx">providers</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@aragon/messenger&#39;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">defer</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;rxjs/observable/defer&#39;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">empty</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;rxjs/observable/empty&#39;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">fromPromise</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;rxjs/observable/fromPromise&#39;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">merge</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;rxjs/observable/merge&#39;</span>
+
+<span class="kr">export</span> <span class="kr">const</span> <span class="nx">AppProxyHandler</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">get</span> <span class="p">(</span><span class="nx">target</span><span class="p">,</span> <span class="nx">name</span><span class="p">,</span> <span class="nx">receiver</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">name</span> <span class="k">in</span> <span class="nx">target</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="nx">target</span><span class="p">[</span><span class="nx">name</span><span class="p">]</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="kd">function</span> <span class="p">(...</span><span class="nx">params</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="nx">target</span><span class="p">.</span><span class="nx">rpc</span><span class="p">.</span><span class="nx">sendAndObserveResponse</span><span class="p">(</span>
+        <span class="s1">&#39;intent&#39;</span><span class="p">,</span>
+        <span class="p">[</span><span class="nx">name</span><span class="p">,</span> <span class="p">...</span><span class="nx">params</span><span class="p">]</span>
+      <span class="p">).</span><span class="nx">pluck</span><span class="p">(</span><span class="s1">&#39;result&#39;</span><span class="p">)</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 
 <h3 id="supported-languages">Supported languages<a class="headerlink" href="#supported-languages" title="Permanent link">Link</a></h3>
 <p>The Code Highlighting uses <a href="http://pygments.org/">Pygments</a>, a generic syntax highlighter.</p>
 <p>It supports over <a href="http://pygments.org/languages">300 languages</a>.</p>
-<p>Example:</p>
-<div class="codehilite"><pre><span></span>``` python
-&quot;&quot;&quot; Bubble sort &quot;&quot;&quot;
-def bubble_sort(items):
-    for i in range(len(items)):
-        for j in range(len(items) - 1 - i):
-            if items[j] &gt; items[j + 1]:
-                items[j], items[j + 1] = items[j + 1], items[j]
-```
-</pre></div>
-
-<p>Result:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5
-6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="sd">&quot;&quot;&quot; Bubble sort &quot;&quot;&quot;</span>
-<span class="k">def</span> <span class="nf">bubble_sort</span><span class="p">(</span><span class="n">items</span><span class="p">):</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">items</span><span class="p">)):</span>
-        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">items</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">i</span><span class="p">):</span>
-            <span class="k">if</span> <span class="n">items</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">items</span><span class="p">[</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]:</span>
-                <span class="n">items</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">items</span><span class="p">[</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">items</span><span class="p">[</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">],</span> <span class="n">items</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
-</pre></div>
-</td></tr></table>
-
 <h3 id="grouping-code-blocks">Grouping code blocks<a class="headerlink" href="#grouping-code-blocks" title="Permanent link">Link</a></h3>
 <p>You can use grouping for code blocks with tabs.</p>
 <p>Example:</p>
-<div class="codehilite"><pre><span></span><span class="sb">``` bash tab=&quot;Bash&quot;</span>
-<span class="sb">#!/bin/bash</span>
+<div class="codehilite"><pre><span></span><span class="err">```</span> <span class="n">bash</span> <span class="n">tab</span><span class="o">=</span><span class="s">&quot;Bash&quot;</span>
+<span class="cp">#!/bin/bash</span>
 
-<span class="sb">echo &quot;Hello world!&quot;</span>
-<span class="sb">```</span>
+<span class="n">echo</span> <span class="s">&quot;Hello world!&quot;</span>
+<span class="err">```</span>
 
-<span class="sb">``` c tab=&quot;C&quot;</span>
-<span class="sb">#include &lt;stdio.h&gt;</span>
+<span class="err">```</span> <span class="n">c</span> <span class="n">tab</span><span class="o">=</span><span class="s">&quot;C&quot;</span>
+<span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
 
-<span class="sb">int main(void) {</span>
-<span class="sb">  printf(&quot;Hello world!</span><span class="err">\</span><span class="sb">n&quot;);</span>
-<span class="sb">}</span>
-<span class="sb">```</span>
+<span class="kr">int</span> <span class="n">main</span><span class="p">(</span><span class="kr">void</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Hello world!</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="err">```</span>
 
-<span class="sb">``` c++ tab=&quot;C++&quot;</span>
-<span class="sb">#include &lt;iostream&gt;</span>
+<span class="err">```</span> <span class="n">c</span><span class="o">++</span> <span class="n">tab</span><span class="o">=</span><span class="s">&quot;C++&quot;</span>
+<span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
 
-<span class="sb">int main() {</span>
-<span class="sb">  std::cout &lt;&lt; &quot;Hello world!&quot; &lt;&lt; std::endl;</span>
-<span class="sb">  return 0;</span>
-<span class="sb">}</span>
-<span class="sb">```</span>
-
-<span class="sb">``` c# tab=&quot;C#&quot;</span>
-<span class="sb">using System;</span>
-
-<span class="sb">class Program {</span>
-<span class="sb">  static void Main(string[] args) {</span>
-<span class="sb">    Console.WriteLine(&quot;Hello world!&quot;);</span>
-<span class="sb">  }</span>
-<span class="sb">}</span>
-<span class="sb">```</span>
+<span class="kr">int</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
+  <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Hello world!&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="err">```</span>
 </pre></div>
 
 <p>Result:</p>
@@ -3876,16 +3882,6 @@ def bubble_sort(items):
 <span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
   <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Hello world!&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
   <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span>
-</pre></div></div>
-<input name="__tabs_1" type="radio" id="__tab_1_3" />
-<label for="__tab_1_3">C#</label>
-<div class="superfences-content"><div class="codehilite"><pre><span></span><span class="k">using</span> <span class="nn">System</span><span class="p">;</span>
-
-<span class="k">class</span> <span class="nc">Program</span> <span class="p">{</span>
-  <span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;Hello world!&quot;</span><span class="p">);</span>
-  <span class="p">}</span>
 <span class="p">}</span>
 </pre></div></div>
 </div>
